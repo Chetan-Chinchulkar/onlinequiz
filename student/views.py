@@ -99,6 +99,8 @@ def calculate_marks_view(request):
         result.exam=course
         result.student=student
         result.save()
+        
+        
 
         return HttpResponseRedirect('view-result')
 

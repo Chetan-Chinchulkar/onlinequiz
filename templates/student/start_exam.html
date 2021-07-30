@@ -62,18 +62,7 @@
   <h1 style="color:#ff0000;font-size:25px;">Quiz ends in <span id="time"></span> minutes!</h1>
 
   <form class="form" name="quiz" autocomplete="off" onsubmit="return saveAns()"  action="/student/calculate-marks" method="POST">
-    <script>
-      window.onload = function () {
-      
-      /* var Minutes = 10 * 60, */
-      var Minutes = 30,
-          display = document.querySelector('#time');
-      startTimer(Minutes, display);
-      
-      var wait=setTimeout("document.quiz.submit();",Minutes *1000);
-      
-    };
-    </script>
+    
     {% csrf_token %}
     <h1 style="text-align: center;">{{course.course_name}}</h1>
     {% for q in questions%}
@@ -115,7 +104,20 @@
 
         {% endfor %}
         <input class="btn btn-info btn-lg"   type="submit" value="Submit">  
-    
+        <script>
+          window.onload = function () {
+          
+          /* var Minutes = 10 * 60, */
+          var Minutes = 30,
+              display = document.querySelector('#time');
+          startTimer(Minutes, display);
+          
+          
+          var wait=setTimeout(saveAns,Minutes *1000);
+          var wait=setTimeout("document.quiz.submit();",Minutes*1000);
+          
+        };
+        </script>
 
       </form>
   </div>
@@ -136,10 +138,12 @@
     
     function setCookie(cname, cvalue, exdays) {
   var d = new Date();
-  d.setTime(d.getTime() + (10*1000));
+  d.setTime(d.getTime() + (30*1000));
   var expires = "expires="+ d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
+
 
 </script> 
 
