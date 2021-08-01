@@ -26,13 +26,14 @@
   
    
     nav{
-      background: linear-gradient(to right, #b92b27, #1565c0)
+      /* background: linear-gradient(to right, #b92b27, #1565c0) */
+      background : transparent;
     }
 
     a:hover{
       transition: transform .3s;
       transform: scale(1.25,1.25);
-      
+      color: aquamarine;
       border-radius: 1rem;
       
     }
@@ -43,16 +44,19 @@
 <body>
   <div class="bs-example">
     <nav class="navbar navbar-expand-md fixed-top" >
-    <a style="text-decoration: none; " href="/"><font face = "Comic sans MS" size =" 5">Online Test</font><br /></a>  
+      <a class="navbar-brand" href="#">
+        <img src="/static/allaylogo.png" alt="..." height="40">
+      </a>
+    <a style="text-decoration: none; color: black;" href="/"><font face = "Comic sans MS" size =" 5"> <i></i>  Online Test</font><br /></a>  
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav">
-          <a style="margin-left: 2rem;" href="/" class="nav-item nav-link active">Home</a>
-          <a href="/teacher/teacherclick" class="nav-item nav-link">Teacher</a>
-          <a href="/student/studentclick" class="nav-item nav-link">Student</a>
-          <a href="/adminclick" class="nav-item nav-link">Admin</a>
+          <a style="margin-left: 2rem; color: black;" href="/" class="nav-item nav-link active">Home</a>
+          <a style="color: black;" href="/company/companyclick" class="nav-item nav-link">Company</a>
+          <a style="color: black;" href="/student/studentclick" class="nav-item nav-link">Student</a>
+          <a style="color: black;" href="/adminclick" class="nav-item nav-link">Admin</a>
         </div>
       </div>
     </nav>

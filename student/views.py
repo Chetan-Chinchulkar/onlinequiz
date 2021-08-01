@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required,user_passes_test
 from django.conf import settings
 from datetime import date, timedelta
 from quiz import models as QMODEL
-from teacher import models as TMODEL
+from company import models as TMODEL
 
 
 #for showing signup/login button for student
@@ -37,6 +37,8 @@ def student_signup_view(request):
 
 def is_student(user):
     return user.groups.filter(name='STUDENT').exists()
+
+
 
 @login_required(login_url='studentlogin')
 @user_passes_test(is_student)
@@ -71,10 +73,13 @@ def take_exam_view(request,pk):
 def start_exam_view(request,pk):
     course=QMODEL.Course.objects.get(id=pk)
     questions=QMODEL.Question.objects.all().filter(course=course)
+    
     if request.method=='POST':
         pass
     response= render(request,'student/start_exam.html',{'course':course,'questions':questions})
     response.set_cookie('course_id',course.id)
+    
+    
     return response
 
 

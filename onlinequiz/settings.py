@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'quiz',
-    'teacher',
+    'company',
     'student',
     'widget_tweaks',
 

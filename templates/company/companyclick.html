@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    body{
+    background-image: url("/static/bg.jpg");
+    background-color: #333;
+    background-blend-mode: normal;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  /* --------------------------------- Greet animation --------------------------------------*/
+
+  .wrapper {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 3rem;
+  color: rgb(4, 0, 255);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+  transform: translate(-50%, -50%) translate(calc(var(--x, 0) * 1%), calc(var(--y, 0) * 1%));
+  font-variation-settings: 'wght' var(--lower);
+  margin: 0;
+}
+.wrapper span {
+  color: hsla(180, 100%, 90%, var(--alpha-l));
+  animation: rise 2.25s infinite ease-in-out;
+  animation-delay: calc((var(--index) - 6) * 0.225s);
+  display: inline-block;
+}
+@keyframes rise {
+  50% {
+    font-variation-settings: 'wght' var(--upper);
+    color: hsla(50, 50, 50, var(--alpha-u));
+    transform: translate(0, -15%);
+  }
+}
+
+
+
+
+  /* ------------------------------------------------------------ */
+
+  </style>
+
+</head>
+
+<body>
+
+  {% include "quiz/navbar.html" %}
+  <br><br>
+  <div class=""  style="margin-bottom:0px;">
+    <h1 class="display-4" style="text-align: center; margin-top: 3rem;">Hello, Company</h1>
+    <p class="lead">Welcome to Online Quiz</p>
+    <hr class="my-4">
+    <p>You can access various features after Login.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg mr-5" style="border-radius: 1rem;" href="companysignup" role="button">Create Your Account</a>
+      <a class="btn btn-primary btn-lg" style="border-radius: 1rem;" href="companylogin" role="button">Login</a>
+    </p>
+    <br><br><br><br>
+  </div>
+
+  <section style="margin-top: 5rem;">
+        
+    <div class="wrapper" style="margin-top: 5rem; margin-bottom: 5rem; --x: 6; --y: -6">
+      <span style="--index: 0; --alpha-l: 0.125; --alpha-u: 0.25;">F</span>
+      <span style="--index: 1; --alpha-l: 0.125; --alpha-u: 0.25;">R</span>
+      <span style="--index: 2; --alpha-l: 0.125; --alpha-u: 0.25;">I</span>
+      <span style="--index: 3; --alpha-l: 0.125; --alpha-u: 0.25;">E</span>
+      <span style="--index: 4; --alpha-l: 0.125; --alpha-u: 0.25;">N</span>
+      <span style="--index: 5; --alpha-l: 0.125; --alpha-u: 0.25;">D</span>
+      <span style="--index: 6; --alpha-l: 0.125; --alpha-u: 0.25;">S</span>
+      <span style="--index: 7; --alpha-l: 0.125; --alpha-u: 0.25;">H</span>
+      <span style="--index: 8; --alpha-l: 0.125; --alpha-u: 0.25;">I</span>
+      <span style="--index: 9; --alpha-l: 0.125; --alpha-u: 0.25;">P</span>
+      <span style="--index: 10; --alpha-l: 0.125; --alpha-u: 0.25;"> </span>
+      <span style="--index: 11; --alpha-l: 0.125; --alpha-u: 0.25;">D</span>
+      <span style="--index: 12; --alpha-l: 0.125; --alpha-u: 0.25;">A</span>
+      <span style="--index: 13; --alpha-l: 0.125; --alpha-u: 0.25;">Y</span>
+    </div>
+    
+    <div class="wrapper" style="margin-top: 5rem; margin-bottom: 5rem;">
+        <span style="--index: 0; --alpha-l: 0.5; --alpha-u: 1;">F</span>
+        <span style="--index: 1; --alpha-l: 0.5; --alpha-u: 1;">R</span>
+        <span style="--index: 2; --alpha-l: 0.5; --alpha-u: 1;">I</span>
+        <span style="--index: 3; --alpha-l: 0.5; --alpha-u: 1;">E</span>
+        <span style="--index: 4; --alpha-l: 0.5; --alpha-u: 1;">N</span>
+        <span style="--index: 5; --alpha-l: 0.5; --alpha-u: 1;">D</span>
+        <span style="--index: 6; --alpha-l: 0.5; --alpha-u: 1;">S</span>
+        <span style="--index: 7; --alpha-l: 0.5; --alpha-u: 1;">H</span>
+        <span style="--index: 8; --alpha-l: 0.5; --alpha-u: 1;">I</span>
+        <span style="--index: 9; --alpha-l: 0.5; --alpha-u: 1;">P</span>
+        <span style="--index: 10; --alpha-l: 0.5; --alpha-u: 1;"></span>
+        <span style="--index: 11; --alpha-l: 0.5; --alpha-u: 1;">D</span>
+        <span style="--index: 12; --alpha-l: 0.5; --alpha-u: 1;">A</span>
+        <span style="--index: 13; --alpha-l: 0.5; --alpha-u: 1;">Y</span>
+    </div>
+
+
+  </section>
+  {% include "quiz/footer.html" %}
+</body>
+
+</html>
