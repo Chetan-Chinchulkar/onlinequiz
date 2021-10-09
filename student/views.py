@@ -74,6 +74,10 @@ def start_exam_view(request,pk):
     course=QMODEL.Course.objects.get(id=pk)
     questions=QMODEL.Question.objects.all().filter(course=course)
     
+    """ Update Status of exam taken """
+    course.taken_status = True
+    course.save()
+    
     if request.method=='POST':
         pass
     response= render(request,'student/start_exam.html',{'course':course,'questions':questions})
@@ -101,12 +105,18 @@ def calculate_marks_view(request):
         student = models.Student.objects.get(user_id=request.user.id)
         result = QMODEL.Result()
         result.marks=total_marks
+        
+        if result.marks >= course.cutoff_marks:
+            result.result_status = True
+        
+        else:
+            result.result_status = False
+        
+        
         result.exam=course
         result.student=student
         result.save()
         
-        
-
         return HttpResponseRedirect('view-result')
 
 

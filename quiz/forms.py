@@ -13,7 +13,7 @@ class ContactusForm(forms.Form):
 class CourseForm(forms.ModelForm):
     class Meta:
         model=models.Course
-        fields=['course_name','question_number','total_marks']
+        fields=['course_name','question_number','total_marks','cutoff_marks']
 
 class QuestionForm(forms.ModelForm):
     

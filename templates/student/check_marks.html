@@ -34,7 +34,7 @@
           <th>Exam Name</th>
           
           <th>Total Marks</th>
-          <th>Attempt</th>
+          <th>Result</th>
           <th>Exam Date</th>
         </tr>
       </thead>
@@ -43,7 +43,13 @@
 
         <td> {{t.exam}}</td>
         <td> {{t.marks}}</td>
-        <td>Attemp {{ forloop.counter }}</td>
+        <td>
+          {% if t.result_status %}
+            <span>Pass</span>
+          {% else %}
+            <span>Fail</span>
+          {% endif %}
+        </td>
         <td> {{t.date}}</td>
         
         

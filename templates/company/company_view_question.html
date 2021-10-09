@@ -34,6 +34,7 @@
           <th>Course Name</th>
           <th>Total Question</th>
           <th>Total Marks</th>
+          <th>Cutoff Marks</th>
           <th>View Question</th>
         </tr>
       </thead>
@@ -43,6 +44,7 @@
         <td> {{c.course_name}}</td>
         <td>{{c.question_number}}</td>
         <td>{{c.total_marks}}</td>
+        <td>{{c.cutoff_marks}}</td>
         <td><a class="btn btn-primary btn-xs" href="{% url 'see-question' c.id  %}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
         
       </tr>

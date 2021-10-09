@@ -37,12 +37,20 @@
         </tr>
       </thead>
       {% for t in courses %}
-      <tr>
+        <tr>
 
-        <td> {{t.course_name}}</td>
-        
-        <td><a class="btn btn-danger btn-xs" href="{% url 'take-exam' t.id  %}"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></td>
-      </tr>
+          <td> {{t.course_name}}</td>
+            {{student.exams_taken}}
+            <td>
+              
+              {% if t.taken_status %}
+                <span class="text"> Already taken </span>
+              {% else %}
+                <a class="btn btn-danger btn-xs" href="{% url 'take-exam' t.id  %}"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+              {% endif %}
+              
+            </td>
+        </tr>
       {% endfor %}
     </table>
   </div>

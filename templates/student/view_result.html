@@ -36,12 +36,20 @@
           <th>View Marks</th>
         </tr>
       </thead>
+      <center>
+        
+        <h1>RESULTS</h1>
+      </center>
       {% for t in courses %}
       <tr>
-
         <td> {{t.course_name}}</td>
         
-        <td><a class="btn btn-danger btn-xs" href="{% url 'check-marks' t.id  %}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+        <td>
+          <a class="btn btn-danger btn-xs" href="{% url 'check-marks' t.id  %}">
+            <span class="glyphicon glyphicon-eye-open"></span>
+          </a>
+          
+        </td>
       </tr>
       {% endfor %}
     </table>

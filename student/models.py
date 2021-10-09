@@ -11,6 +11,9 @@ class Student(models.Model):
     def get_name(self):
         return self.user.first_name+" "+self.user.last_name
     @property
+    def exams_taken(self):
+	    return [r.course for r in Result.objects.get(student=self)]
+    @property
     def get_instance(self):
         return self
     def __str__(self):

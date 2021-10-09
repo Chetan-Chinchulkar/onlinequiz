@@ -18,11 +18,11 @@
     }
 
     header {
-      margin-top: -1rem;
+      margin-top: 0rem;
       position: fixed;
       /* background: #22242A; */
-      background: linear-gradient(to right, #b92b27, #1565c0);
-      padding: 20px;
+      background: linear-gradient(to right, #fab01c, #ffff33);
+      padding: 0px;
       width: 100%;
       z-index: 1;
     }
@@ -174,16 +174,23 @@
   <!--header area start-->
   <header>
     <label for="check">
-      <i style="left: 200px;margin-top: 17px;"class="fas fa-bars" id="sidebar_btn"></i>
+      <i style="left: 5px ;margin-top: 25px;"class="fas fa-bars" id="sidebar_btn"></i>
     </label>
-    <a class="navbar-brand" style="margin-left: -3rem; margin-top: .75rem;" href="#">
+
+    <!-- <a class="navbar-brand" style="margin-left: 0rem; margin-top: 2rem;" href="#">
       <img src="/static/allaylogo.png" alt="..." style="" height="30">
-    </a>
-    <div class="left_area" style="margin-top: .75rem;">
-      <h3>Online Quiz</h3>
+    </a> -->
+    
+    <div class="left_area">
+      <center>
+        <a href="">
+          <img src="/static/allaylogo.png" alt="..." style="margin-top:-1rem" height="30">
+        </a>
+        <h3>Placement Drive Test 2021</h3>
+      </center>
     </div>
     <div class="right_area">
-      <a href="/logout" class="logout_btn">Logout</a>
+      <a href="/logout" class="logout_btn" >Logout</a>
     </div>
   </header>
   <!--header area end-->
@@ -193,6 +200,7 @@
 
       <img src="{% static "image/student.png" %}" class="profile_image" alt="">
       <h4>{{request.user.first_name}}</h4>
+      <h4>{{request.user.student.result}}</h4>
       <h6 style="color: rgb(255, 255, 255);">( Student )</h6>
 
     </center>
@@ -209,8 +217,8 @@
     <br><br><br><br><br>
     {% block content %}
 
+   
     {% endblock content %}
-
 
     <br><br><br>
     {% include "quiz/footer.html" %}

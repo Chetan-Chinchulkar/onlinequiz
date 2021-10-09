@@ -6,7 +6,9 @@ class Course(models.Model):
    course_name = models.CharField(max_length=50)
    question_number = models.PositiveIntegerField()
    total_marks = models.PositiveIntegerField()
-   
+   cutoff_marks = models.PositiveIntegerField(default=0)
+   taken_status = models.BooleanField(default=False)
+
    def __str__(self):
         return self.course_name
 
@@ -22,8 +24,10 @@ class Question(models.Model):
     answer=models.CharField(max_length=200,choices=cat)
 
 class Result(models.Model):
+    
     student = models.ForeignKey(Student,on_delete=models.CASCADE)
     exam = models.ForeignKey(Course,on_delete=models.CASCADE)
     marks = models.PositiveIntegerField()
     date = models.DateTimeField(auto_now=True)
+    result_status = models.BooleanField(default=False)
 
